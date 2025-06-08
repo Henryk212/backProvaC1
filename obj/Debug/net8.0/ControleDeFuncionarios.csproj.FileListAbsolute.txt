@@ -920,3 +920,4 @@ C:\Users\henri\OneDrive\Área de Trabalho\ControleDeFuncionarios-master\obj\Debu
 C:\Users\henri\OneDrive\Área de Trabalho\ControleDeFuncionarios-master\obj\Debug\net8.0\ControleDeFuncionarios.pdb
 C:\Users\henri\OneDrive\Área de Trabalho\ControleDeFuncionarios-master\obj\Debug\net8.0\ControleDeFuncionarios.genruntimeconfig.cache
 C:\Users\henri\OneDrive\Área de Trabalho\ControleDeFuncionarios-master\obj\Debug\net8.0\ref\ControleDeFuncionarios.dll
+C:\Users\henri\OneDrive\Área de Trabalho\ControleDeFuncionarios-master\obj\Debug\net8.0\ControleDeFuncionarios.sourcelink.json

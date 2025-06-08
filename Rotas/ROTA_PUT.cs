@@ -16,6 +16,7 @@ public static class ROTA_PUT
                 return Results.NotFound("Cargo não encontrado.");
             }
             existingCargo.nome = cargo.nome;
+            existingCargo.descricao = cargo.descricao;
             await context.SaveChangesAsync();
             return Results.Ok(existingCargo);
         });
@@ -54,17 +55,37 @@ public static class ROTA_PUT
 
         app.MapPut("/api/pessoa/{id}", async (int id, Pessoa pessoa, AppDbContext context) =>
         {
-            var existingPessoa = await context.Pessoas.FindAsync(id);
+            var existingPessoa = await context.Pessoas.FirstOrDefaultAsync(p => p.id == id);
             if (existingPessoa == null)
             {
                 return Results.NotFound("Pessoa não encontrada.");
             }
+
             existingPessoa.nome = pessoa.nome;
             existingPessoa.dataNascimento = pessoa.dataNascimento;
             existingPessoa.cpf = pessoa.cpf;
-            await context.SaveChangesAsync();
-            return Results.Ok(existingPessoa);
-        });
+            existingPessoa.telefone = pessoa.telefone;
+            existingPessoa.email = pessoa.email;
+            existingPessoa.sexo = pessoa.sexo;
+
+            if (pessoa.Endereco != null && existingPessoa.enderecoID != null)
+            {
+                var existingEndereco = await context.Enderecos.FindAsync(existingPessoa.enderecoID);
+                if (existingEndereco != null)
+                {
+                    existingEndereco.TipoLogradouro = pessoa.Endereco.TipoLogradouro;
+                    existingEndereco.Logradouro = pessoa.Endereco.Logradouro;
+                    existingEndereco.Numero = pessoa.Endereco.Numero;
+                    existingEndereco.Complemento = pessoa.Endereco.Complemento;
+                    existingEndereco.Bairro = pessoa.Endereco.Bairro;
+                    existingEndereco.Estado = pessoa.Endereco.Estado;
+                    existingEndereco.Cep = pessoa.Endereco.Cep;
+                }
+            }
+
+                await context.SaveChangesAsync();
+                return Results.Ok(existingPessoa);
+            });
 
         app.MapPut("/api/setor/{id}", async (int id, Setor setor, AppDbContext context) =>
         {
@@ -74,6 +95,7 @@ public static class ROTA_PUT
                 return Results.NotFound("Setor não encontrado.");
             }
             existingSetor.nome = setor.nome;
+            existingSetor.descricao = setor.descricao;
             await context.SaveChangesAsync();
             return Results.Ok(existingSetor);
         });
