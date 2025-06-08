@@ -1,0 +1,53 @@
+@baseUrl = http://localhost:5077/api
+
+
+### Listar cargos
+GET {{baseUrl}}/cargo
+
+### Listar cargos por id
+GET {{baseUrl}}/cargo/3
+
+### listar dados bancarios
+GET {{baseUrl}}/dadosbancarios
+
+### listar dados bancarios por id
+GET {{baseUrl}}/dadosbancarios/3
+
+### listar dados bancarios por id de funcionario
+GET {{baseUrl}}/dadosbancarios/funcionario/6
+
+### listar endereços 
+GET {{baseUrl}}/endereco
+
+### listar endereços por id
+GET {{baseUrl}}/endereco/3
+
+### listar endereço por id de funcionário
+GET {{baseUrl}}/endereco/funcionario/6
+
+### listar pessoa
+GET {{baseUrl}}/pessoa
+
+### listar pessoa por id
+GET {{baseUrl}}/pessoa/3
+
+### listar setor
+GET {{baseUrl}}/setor
+
+### listar setor por id
+GET {{baseUrl}}/setor/3
+
+### listar setor por id de funcionario
+GET {{baseUrl}}/setor/funcionario/6
+
+### listar funcionarios 
+GET {{baseUrl}}/funcionario
+
+### listar funcionarios por id
+GET {{baseUrl}}/funcionario/3
+
+### listar funcionarios por id de setor
+GET {{baseUrl}}/funcionario/setor/3
+
+### listar funcionarios por id de cargo
+GET {{baseUrl}}/funcionario/cargo/3

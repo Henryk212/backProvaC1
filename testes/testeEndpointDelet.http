@@ -1,0 +1,20 @@
+@baseUrl = http://localhost:5077/api
+
+
+### Deletar cargo
+DELETE {{baseUrl}}/cargo/3
+
+### Deletar dados bancarios
+DELETE {{baseUrl}}/dadosbancarios/3
+
+### Deletar endereço
+DELETE {{baseUrl}}/endereco/3
+
+### Deletar pessoa
+DELETE {{baseUrl}}/pessoa/3
+
+### Deletar setor
+DELETE {{baseUrl}}/setor/3
+
+### Deletar funcionario
+DELETE {{baseUrl}}/funcionario/6

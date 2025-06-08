@@ -1,0 +1,76 @@
+@baseUrl = http://localhost:5077/api
+
+### Criar cargo
+POST {{baseUrl}}/cargo
+Content-Type: application/json
+
+{
+  "nome": "Analista",
+  "descricao": "Responsável por análise de sistemas"
+}
+
+### Criar dados bancários
+POST {{baseUrl}}/dadosbancarios
+Content-Type: application/json
+
+{
+  "banco": "Banco do Brasil",
+  "agencia": "1234",
+  "conta": "56789-0",
+  "tipoConta": "Corrente",
+  "cpfTitular": "123.456.789-00",
+  "nomeTitular": "Joãozinho",
+  "telefoneTitular": "41997707955",
+  "emailTitular": "Joãozinho@gmail.com"
+}
+
+### Criar endereço
+POST {{baseUrl}}/endereco
+Content-Type: application/json
+
+{
+  "rua": "Rua das Flores",
+  "numero": "100",
+  "bairro": "Centro",
+  "cidade": "São Paulo",
+  "estado": "SP",
+  "cep": "01000-000",
+  "TipoLogradouro": "Rua",
+  "Logradouro": "Rua das flores",
+  "Complemento": "Ao lado do Mc'Donnalds"
+}
+
+### Criar pessoa
+POST {{baseUrl}}/pessoa
+Content-Type: application/json
+
+{
+  "nome": "Maria Souza",
+  "cpf": "123.456.789-00",
+  "dataNascimento": "1990-01-01",
+  "sexo": "Feminino",
+  "telefone": "41997707977",
+  "email": "Mariasouza@gmail.com"
+}
+
+### Criar setor
+POST {{baseUrl}}/setor
+Content-Type: application/json
+
+{
+  "nome": "RH",
+  "descricao": "Recursos Humanos"
+}
+
+### Criar funcionário
+POST {{baseUrl}}/funcionario
+Content-Type: application/json
+
+{
+  "pessoaId": 1,
+  "cargoId": 1,
+  "setorId": 1,
+  "dadosBancariosId": 1,
+  "enderecoID": 1,
+  "salario": 3500
+}
